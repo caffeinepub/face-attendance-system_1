@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* App background: #F5F7FA */
+    --background: 0.966 0.006 252;
+    --foreground: 0.18 0.02 264;
+
+    /* Cards: white */
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.02 264;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.02 264;
+
+    /* Primary accent: #2563EB */
+    --primary: 0.52 0.24 264;
+    --primary-foreground: 1 0 0;
+
+    /* Secondary: light gray */
+    --secondary: 0.96 0.004 252;
+    --secondary-foreground: 0.18 0.02 264;
+
+    /* Muted: secondary text #6B7280 */
+    --muted: 0.96 0.004 252;
+    --muted-foreground: 0.52 0.01 264;
+
+    /* Accent */
+    --accent: 0.94 0.01 252;
+    --accent-foreground: 0.18 0.02 264;
+
+    /* Destructive: #EF4444 */
+    --destructive: 0.63 0.23 27;
+    --destructive-foreground: 1 0 0;
+
+    --border: 0.91 0.008 252;
+    --input: 0.91 0.008 252;
+    --ring: 0.52 0.24 264;
+
+    /* Charts */
+    --chart-1: 0.52 0.24 264;
+    --chart-2: 0.55 0.17 152;
+    --chart-3: 0.63 0.23 27;
+    --chart-4: 0.72 0.16 84;
+    --chart-5: 0.64 0.18 200;
+
+    /* Sidebar: deep navy #0B1F33 → #122B45 */
+    --sidebar: 0.17 0.05 255;
+    --sidebar-foreground: 0.97 0.005 255;
+    --sidebar-primary: 0.52 0.24 264;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.22 0.05 255;
+    --sidebar-accent-foreground: 0.97 0.005 255;
+    --sidebar-border: 0.25 0.04 255;
+    --sidebar-ring: 0.52 0.24 264;
+
+    /* Custom semantic tokens */
+    --success: 0.55 0.17 152;
+    --success-bg: 0.96 0.05 152;
+    --danger-bg: 0.95 0.04 27;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .sidebar-gradient {
+    background: linear-gradient(180deg, #0b1f33 0%, #122b45 100%);
+  }
+
+  .chip-success {
+    color: #16a34a;
+    background-color: #dcfce7;
+  }
+
+  .chip-absent {
+    color: #dc2626;
+    background-color: #fee2e2;
+  }
+
+  .chip-late {
+    color: #d97706;
+    background-color: #fef3c7;
+  }
+
+  .live-badge {
+    animation: pulse-red 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse-red {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  .face-detected-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.75) 0%,
+      transparent 100%
+    );
+  }
+}
